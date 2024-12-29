@@ -1,14 +1,20 @@
 "use strict";
 
-function curry(a) {
-  return function(b) {
-    return a * b; 
+function curry(c) { 
+  return function(a) {
+    return function(b) {
+      return c(a, b);
+    };
   };
 }
 
-const result = curry(5)(2); 
-console.log(result); 
+function multiply(a, b) {
+  return a * b;
+}
 
+let curriedMultiply = curry(multiply);
+
+alert(curriedMultiply(5)(2)); // 10
 
 
 
