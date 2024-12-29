@@ -12,7 +12,7 @@ function multiply(a, b) {
   return a * b;
 }
 
-let curriedMultiply = curry(multiply);
+const curriedMultiply = curry(multiply);
 
 alert(curriedMultiply(5)(2)); // 10
 
